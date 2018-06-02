@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.mtecc.rdc.pojo.SysMenu" table="SYS_MENU">
+        <id name="menuid" type="java.lang.Integer">
+            <column name="MENUID"  />
+            <generator class="identity" />
+        </id>
+        <property name="pmenuid" type="java.lang.Integer">
+            <column name="PMENUID" length="11">
+                <comment>父菜单id</comment>
+            </column>
+        </property>
+        
+        <property name="menuname" type="java.lang.String">
+            <column name="MENUNAME" length="50">
+                <comment>菜单名称</comment>
+            </column>
+        </property>
+        <property name="menuflag" type="java.lang.String">
+            <column name="MENUFLAG" length="20">
+                <comment>菜单标识</comment>
+            </column>
+        </property>
+        <property name="menuorder" type="java.lang.Integer">
+            <column name="MENUORDER" precision="5" scale="0">
+                <comment>菜单顺序</comment>
+            </column>
+        </property>
+        <property name="menuurl" type="java.lang.String">
+            <column name="MENUURL" length="200">
+                <comment>菜单链接</comment>
+            </column>
+        </property>
+        <property name="menulv" type="java.lang.String">
+            <column name="MENULV" length="2">
+                <comment>菜单等级</comment>
+            </column>
+        </property>
+        <property name="isactive" type="java.lang.String">
+            <column name="ISACTIVE" length="1">
+                <comment>是否可用 0：可用；1：禁用</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

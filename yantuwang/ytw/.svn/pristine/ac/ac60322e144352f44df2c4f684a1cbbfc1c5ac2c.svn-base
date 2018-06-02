@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.mtecc.rdc.pojo.SysUser" table="SYS_USER">
+    <id name="userid" type="java.lang.Integer">
+      <column name="USERID" length="20" />
+      <generator class="identity" />
+    </id>
+    <property name="logname" type="java.lang.String">
+      <column name="LOGNAME" length="30">
+        <comment>登陆名</comment>
+      </column>
+    </property>
+    <property name="password" type="java.lang.String">
+      <column name="PASSWORD" length="16">
+        <comment>登陆密码</comment>
+      </column>
+    </property>
+     <many-to-one name="org" column="ORGID" class="com.mtecc.rdc.pojo.SysOrganization" lazy="false" not-null="false"></many-to-one>
+     
+    <property name="username" type="java.lang.String">
+      <column name="USERNAME" length="40">
+        <comment>用户姓名</comment>
+      </column>
+    </property>
+    <property name="phonenum" type="java.lang.String">
+      <column name="PHONENUM" length="15">
+        <comment>手机号</comment>
+      </column>
+    </property>
+    <property name="email" type="java.lang.String">
+      <column name="EMAIL" length="50">
+        <comment>电子邮箱地址</comment>
+      </column>
+    </property>
+    
+     <property name="remark" type="java.lang.String">
+      <column name="REMARK" >
+        <comment>备注（是否是所长、区长、市长）</comment>
+      </column>
+    </property>
+  </class>
+</hibernate-mapping>
